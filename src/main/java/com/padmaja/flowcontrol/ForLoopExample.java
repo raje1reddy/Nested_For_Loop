@@ -9,6 +9,6 @@ public class ForLoopExample {
             }
 
         }
-        return 3;
+        return 0;
     }
 }

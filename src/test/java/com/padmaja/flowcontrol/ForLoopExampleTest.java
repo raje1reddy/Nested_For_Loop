@@ -1,17 +1,37 @@
 package com.padmaja.flowcontrol;
 
+import org.junit.After;
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 
 public class ForLoopExampleTest {
-    ForLoopExample forLoopExample = new ForLoopExample();
+ private ForLoopExample forLoopExample;
+    @BeforeClass
+    public static void setUpClass()
+    {
+        System.out.println("set up class");
+       // ForLoopExample forLoopExample = new ForLoopExample();
+    }
+    @Before
+    public void setUp(){
+        forLoopExample = new ForLoopExample();
+    }
+
+    @After
+    public void tearDown(){
+        System.out.println("tear down");
+        forLoopExample = null;
+    }
+
     @Test
     public void ForLoopExample1() {
         int result = forLoopExample.tablesExample();
         System.out.println(result);
-        int expectedresult = 3;
+        int expectedresult = 0;
         assertEquals(expectedresult,result);
     }
 
